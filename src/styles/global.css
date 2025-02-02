@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Aeonik Pro Regular';
+  src: url('/fonts/AeonikPro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro Black';
+  src: url('/fonts/AeonikPro-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro Medium';
+  src: url('/fonts/AeonikPro-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Aeonik Pro Regular', 'sans-serif';
+  --font-black: 'Aeonik Pro Black', 'sans-serif';
+  --font-medium: 'Aeonik Pro Medium', 'sans-serif';
+}

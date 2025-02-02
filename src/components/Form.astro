@@ -1,0 +1,88 @@
+---
+import error from '../assets/error.svg';
+import success from '../assets/success.svg';
+---
+
+<div class="container mx-auto max-w-[600px]">
+  <div
+    class="flex flex-col gap-4 rounded-2xl bg-white/50 p-8 ring-1 shadow-lg ring-black/5 backdrop-blur-xl"
+  >
+    <div id="success" class="hidden">
+      <div
+        class="flex h-12 flex-row items-center gap-2 rounded-lg bg-green-100 p-4 text-green-800"
+      >
+        <img height="16px" width="16px" src={success.src} alt="success" />
+        <p class="text-sm">Successfully converted</p>
+      </div>
+    </div>
+
+    <div id="error" class="hidden">
+      <div
+        class="flex h-12 flex-row items-center gap-2 rounded-lg bg-red-100 p-4 text-red-800"
+      >
+        <img height="16px" width="16px" src={error.src} alt="error" />
+        <p id="errorText" class="text-sm">Error converting</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="url" class="text-gray-700">YouTube URL</label>
+      <input
+        type="text"
+        id="url"
+        name="url"
+        placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        required
+        class="h-10 w-full rounded-lg border border-gray-300 bg-white px-3 text-gray-700"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="artist" class="text-gray-700">Artist name</label>
+      <input
+        type="text"
+        id="artist"
+        name="artist"
+        placeholder="Rick Astley"
+        required
+        class="h-10 w-full rounded-lg border border-gray-300 bg-white px-3 text-gray-700"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="title" class="text-gray-700">Song title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Never Gonna Give You Up"
+        required
+        class="h-10 w-full rounded-lg border border-gray-300 bg-white px-3 text-gray-700"
+      />
+    </div>
+
+    <button
+      id="convertBtn"
+      class="mt-4 w-full rounded-full bg-gray-900 py-2 font-medium text-white transition ease-in-out hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-700"
+    >
+      Convert
+    </button>
+
+    <div class="mt-4 flex flex-col justify-center gap-2 text-center">
+      <p id="status" class="font-medium text-gray-700"></p>
+      <div id="progressContainer" class="hidden">
+        <div class="relative h-2 w-full rounded-full bg-gray-200">
+          <div
+            id="progressBar"
+            class="h-full rounded-full bg-gray-900 transition-all duration-300"
+            style="width: 0%"
+          >
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">This may take up to a minute</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../scripts/convert.ts"></script>

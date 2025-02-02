@@ -1,0 +1,36 @@
+---
+import github from '../assets/github.svg';
+import logo from '../assets/logo.svg';
+---
+
+<nav
+  class="fixed top-0 z-30 w-full border-b border-gray-200 bg-white/50 backdrop-blur-xl transition-all"
+>
+  <div
+    class="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto"
+  >
+    <a href="/" class="flex items-center">
+      <img
+        src={logo.src}
+        alt="Logo"
+        width="191"
+        height="191"
+        class="mr-2 size-[30px] rounded-sm"
+      />
+      <p class="text-2xl font-medium text-gray-900">Kobalt</p>
+    </a>
+    <a
+      href="https://github.com/hagelstam/kobalt"
+      class="flex items-center"
+      target="_blank"
+    >
+      <img
+        src={github.src}
+        alt="GitHub"
+        width="191"
+        height="191"
+        class="mr-2 size-[30px] rounded-sm"
+      />
+    </a>
+  </div>
+</nav>
