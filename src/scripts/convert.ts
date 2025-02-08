@@ -36,7 +36,7 @@ convertBtn.addEventListener('click', () => {
 
   const queryParams = new URLSearchParams({ url, title, artist });
   const eventSource = new EventSource(
-    'http://localhost:8080/convert?' + queryParams.toString(),
+    'http://localhost:8080/api/v1/convert?' + queryParams.toString(),
   );
 
   const reset = () => {
