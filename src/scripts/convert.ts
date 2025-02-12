@@ -71,6 +71,14 @@ convertBtn.addEventListener('click', () => {
     if (data.status === 'completed') {
       errorElement.classList.add('hidden');
       successElement.classList.remove('hidden');
+
+      const a = document.createElement('a');
+      a.href = data.message;
+      a.download = `${artist} - ${artist}.mp3`; // TODO: not working
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
       reset();
     }
   };
