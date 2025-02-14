@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.PUBLIC_API_URL;
+
 const convertBtn = document.getElementById('convertBtn') as HTMLButtonElement;
 
 const urlElement = document.getElementById('url') as HTMLInputElement;
@@ -36,7 +38,7 @@ convertBtn.addEventListener('click', () => {
 
   const queryParams = new URLSearchParams({ url, title, artist });
   const eventSource = new EventSource(
-    'http://localhost:8080/api/v1/convert?' + queryParams.toString(),
+    `${API_URL}/api/v1/convert?${queryParams.toString()}`,
   );
 
   const reset = () => {
